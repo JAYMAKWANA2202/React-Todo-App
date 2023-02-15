@@ -1,0 +1,73 @@
+.sign-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.name-fields {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .name-fields {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .name-fields .form-group {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-group {
+    margin-bottom: 20px;
+  }
+}
+
+.form-label {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.lastname {
+  margin-right: 0px;
+}
+
+#formBasicFirstName {
+  border: 1px solid #ced4da;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.375rem;
+  border: 1px solid #ced4da;
+  width: 252px;
+}
+
+#formBasicLastName {
+  border: 1px solid #ced4da;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 252px;
+}

@@ -1,0 +1,41 @@
+.main_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 60%;
+  font-size: 18px;
+}
+
+button.push {
+  background-color: #008cba;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button.push:hover {
+  background-color: #007b9c;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logout_btn {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+}

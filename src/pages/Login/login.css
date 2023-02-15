@@ -1,0 +1,15 @@
+.loginbox {
+  /* text-align: center; */
+  /* border: 2px solid black; */
+  /* height: 322px; */
+  /* margin: 0 15px 0 15px; */
+
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* .loginbox .btn {
+  width: 300px;
+  margin-top: 20px;
+} */

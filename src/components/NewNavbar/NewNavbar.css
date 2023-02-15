@@ -1,0 +1,9 @@
+.d {
+  margin-left: 1px;
+}
+
+.login {
+  justify-content: right;
+  display: flex;
+  margin-right: 50px;
+}
