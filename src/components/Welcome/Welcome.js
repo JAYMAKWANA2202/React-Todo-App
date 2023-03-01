@@ -1,6 +1,10 @@
 import React from "react";
-// import "./welcome.css";
+import "./welcome.css";
 
 export default function Welcome() {
-  return <h1>Welcom to Todo App</h1>;
+  return (
+    <div className="welcome">
+      <h1>Welcome to Todo App</h1>
+    </div>
+  );
 }

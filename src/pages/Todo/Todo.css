@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75vh;
+  margin-top: -161px;
 }
 
 input[type="text"] {
@@ -12,6 +12,8 @@ input[type="text"] {
   margin-right: 10px;
   width: 60%;
   font-size: 18px;
+  background-color: #2a2424;
+  color: antiquewhite;
 }
 
 button.push {
@@ -38,4 +40,45 @@ ul {
   display: block;
   margin: auto;
   margin-top: 30px;
+}
+
+.sidbar {
+  margin-top: 182px;
+  justify-content: center;
+  width: 35%;
+  background-color: rgb(51, 51, 56);
+  border-radius: 15px;
+}
+.sidbar h1 {
+  color: antiquewhite;
+}
+
+.todo_style {
+  display: flex;
+  align-items: center;
+}
+
+.todo_style li {
+  margin-left: 10px;
+}
+
+.todo_style {
+  display: flex;
+  align-items: center;
+  margin: 8px;
+  padding: 8px;
+  background-color: #81bdd7;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(2, 2, 2, 0.2);
+}
+
+.todo_style b {
+  margin-left: 10px;
+  /* flex: 1; */
+  text-align: right;
+}
+
+.trash:hover {
+  font-size: large;
+  color: red;
 }

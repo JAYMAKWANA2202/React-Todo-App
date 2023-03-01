@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import Validation2 from "./Validation2";
 import "./Signup2.css";
+import { logInWithEmailAndPassword } from "../../utils/firebase";
 
 export default function Signup() {
   const [values, setValues] = useState({
@@ -26,7 +27,8 @@ export default function Signup() {
       Object.keys(errors).length === 0 &&
       values.password === values.confirmpassword
     ) {
-      localStorage.setItem("values", JSON.stringify(values));
+      // localStorage.setItem("values", JSON.stringify(values));
+      logInWithEmailAndPassword(values.email, values.password);
     }
   }
 
@@ -44,8 +46,8 @@ export default function Signup() {
 
   return (
     <div className="container">
-      <h1>Sign Up</h1>
       <div className="sign-form">
+        <h1>Sign Up</h1>
         <Form onSubmit={handleSubmit}>
           <div className="name-fields">
             <Form.Group controlId="formBasicFirstName">
@@ -56,19 +58,21 @@ export default function Signup() {
                 onChange={handleChange}
                 placeholder="Enter First Name"
                 value={values.firstname}
+                autoComplete="off"
               />
               {errors.firstname && (
                 <p style={{ color: "red" }}>{errors.firstname}</p>
               )}
             </Form.Group>
             <Form.Group controlId="formBasicLastName" className="lastname">
-              <Form.Label className="my-2">Last Name::</Form.Label>
+              <Form.Label className="my-2">Last Name:</Form.Label>
               <Form.Control
                 type="text"
                 name="lastname"
                 onChange={handleChange}
                 placeholder="Enter Last Name"
                 value={values.lastname}
+                autoComplete="off"
               />
               {errors.lastname && (
                 <p style={{ color: "red" }}>{errors.lastname}</p>
@@ -83,6 +87,7 @@ export default function Signup() {
               onChange={handleChange}
               placeholder="Enter email"
               value={values.email}
+              autoComplete="off"
             />
             {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
           </Form.Group>
@@ -95,6 +100,7 @@ export default function Signup() {
               onChange={handleChange}
               placeholder="Password"
               value={values.password}
+              autoComplete="off"
             />
             {errors.password && (
               <p style={{ color: "red" }}>{errors.password}</p>
@@ -109,12 +115,12 @@ export default function Signup() {
               onChange={handleChange}
               placeholder="Confirm Password"
               value={values.confirmpassword}
+              autoComplete="off"
             />
             {errors.confirmpassword && (
               <p style={{ color: "red" }}>{errors.confirmpassword}</p>
             )}
           </Form.Group>
-
           <Button variant="primary" type="submit" className="btn mt-3">
             Sign Up
           </Button>

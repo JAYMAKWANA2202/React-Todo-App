@@ -20,8 +20,6 @@ const Validation2 = (values) => {
 
   if (!values.password) {
     errors.password = "*password is required";
-  } else if (values.password.length < 8) {
-    errors.password = "*password is more then 8";
   }
 
   if (!values.confirmpassword) {

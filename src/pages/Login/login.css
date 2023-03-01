@@ -1,15 +1,21 @@
 .loginbox {
-  /* text-align: center; */
-  /* border: 2px solid black; */
-  /* height: 322px; */
-  /* margin: 0 15px 0 15px; */
-
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+  /* margin-top: 9%; */
+  border-radius: 15px;
 }
 
-/* .loginbox .btn {
-  width: 300px;
-  margin-top: 20px;
-} */
+.loginbox {
+  background-color: rgb(51, 51, 56);
+  color: antiquewhite;
+}
+
+#formBasicEmail {
+  background-color: #2a2424;
+  color: antiquewhite;
+}
+#formBasicPassword {
+  background-color: #2a2424;
+  color: antiquewhite;
+}
