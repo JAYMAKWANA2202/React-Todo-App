@@ -7,12 +7,15 @@ import { app, db } from "../../utils/firebase";
 import {
   getAuth,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
+import { where } from "firebase/firestore";
 
 export default function Login() {
   const history = useHistory();
   const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
 
   const [values, setValues] = useState({
     email: "",
@@ -22,6 +25,19 @@ export default function Login() {
   function handleChange(e) {
     setValues({ ...values, [e.target.name]: e.target.value });
   }
+
+  const handleGoogleSignIn = async () => {
+    signInWithPopup(auth, provider)
+      .then(async (res) => {
+        console.log("res: ", res);
+        if (auth.currentUser) {
+          history.push("/todo");
+        }
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,6 +88,9 @@ export default function Login() {
               ></Form.Group>
               <Button variant="primary" type="submit" className="btn">
                 Login
+              </Button>
+              <Button onClick={handleGoogleSignIn} className="btn mx-2">
+                Sign in with Google
               </Button>
             </Form>
           </div>

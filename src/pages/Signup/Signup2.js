@@ -14,7 +14,6 @@ export default function Signup() {
   });
 
   const [errors, setErrors] = useState({});
-  const [showGoogleForm, setShowGoogleForm] = useState(false);
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -131,14 +130,6 @@ export default function Signup() {
             onClick={handleSubmit}
           >
             Sign Up
-          </Button>
-          <Button
-            variant="primary"
-            type="submit"
-            className="btn mt-3 mx-2"
-            onClick={signInWithGoogle}
-          >
-            Google Signin
           </Button>
         </Form>
       </div>

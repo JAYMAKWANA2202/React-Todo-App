@@ -57,7 +57,7 @@ export const signInWithGoogle = () => {
       console.log("result:dddddddd ", result);
       const { displayName, email, uid } = result.user;
       const userRef = doc(db, "user", uid);
-      await setDoc(userRef, { displayName, email });
+      await setDoc(userRef, { displayName, email, uid });
       console.log("User data saved successfully!");
     })
     .catch((error) => console.logO(error));
