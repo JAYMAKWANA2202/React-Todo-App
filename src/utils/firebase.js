@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import {
   getFirestore,
   collection,
@@ -25,11 +30,10 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
-// export const firestore = firebase.firestore();
-
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const provider = new GoogleAuthProvider();
 
 export const logInWithEmailAndPassword = async (email, password) => {
   try {
@@ -44,4 +48,17 @@ export const logInWithEmailAndPassword = async (email, password) => {
     console.error(err);
     alert(err.message);
   }
+};
+
+//signin with google
+export const signInWithGoogle = () => {
+  signInWithPopup(auth, provider)
+    .then(async (result) => {
+      console.log("result:dddddddd ", result);
+      const { displayName, email, uid } = result.user;
+      const userRef = doc(db, "user", uid);
+      await setDoc(userRef, { displayName, email });
+      console.log("User data saved successfully!");
+    })
+    .catch((error) => console.logO(error));
 };

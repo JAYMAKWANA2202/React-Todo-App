@@ -9,7 +9,6 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getDoc, doc } from "firebase/firestore";
 
 export default function Login() {
   const history = useHistory();

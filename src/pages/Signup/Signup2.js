@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import Validation2 from "./Validation2";
 import "./Signup2.css";
 import { logInWithEmailAndPassword } from "../../utils/firebase";
+import { signInWithGoogle } from "../../utils/firebase";
 
 export default function Signup() {
   const [values, setValues] = useState({
@@ -13,6 +14,7 @@ export default function Signup() {
   });
 
   const [errors, setErrors] = useState({});
+  const [showGoogleForm, setShowGoogleForm] = useState(false);
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -22,6 +24,7 @@ export default function Signup() {
     e.preventDefault();
     console.log(e);
     setErrors(Validation2(values));
+
     // for storage data
     if (
       Object.keys(errors).length === 0 &&
@@ -121,8 +124,21 @@ export default function Signup() {
               <p style={{ color: "red" }}>{errors.confirmpassword}</p>
             )}
           </Form.Group>
-          <Button variant="primary" type="submit" className="btn mt-3">
+          <Button
+            variant="primary"
+            type="submit"
+            className="btn mt-3"
+            onClick={handleSubmit}
+          >
             Sign Up
+          </Button>
+          <Button
+            variant="primary"
+            type="submit"
+            className="btn mt-3 mx-2"
+            onClick={signInWithGoogle}
+          >
+            Google Signin
           </Button>
         </Form>
       </div>
