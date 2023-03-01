@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Todo from "./pages/Todo/Todo";
 import Welcome from "./components/Welcome/Welcome";
@@ -15,7 +15,7 @@ import { db } from "./utils/firebase";
 
 export default function Router() {
   const auth = getAuth(app);
-  // const usersCollectionRef = collection(db, "todos");
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -32,6 +32,7 @@ export default function Router() {
           .catch((error) => {
             console.log("Error getting user data:", error);
           });
+
         setIsAuthenticated(true);
       } else {
         setIsAuthenticated(false);
@@ -46,9 +47,11 @@ export default function Router() {
         <Route exact path="/">
           <Welcome />
         </Route>
+
         <Route path="/login">
           <Login />
         </Route>
+
         <Route path="/home ">
           <Home />
         </Route>
