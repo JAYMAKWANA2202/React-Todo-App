@@ -15,7 +15,7 @@ import { db } from "./utils/firebase";
 
 export default function Router() {
   const auth = getAuth(app);
-  const usersCollectionRef = collection(db, "todos");
+  // const usersCollectionRef = collection(db, "todos");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
